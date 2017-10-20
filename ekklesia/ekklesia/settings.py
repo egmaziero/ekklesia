@@ -25,12 +25,13 @@ SECRET_KEY = 'gb9a&ua&ta)h@@3l2up#$=s@cet$pq$-ay%@bciza1fj4&ic7k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'overview.apps.OverviewConfig',
     'membros.apps.MembrosConfig',
     'departamentos.apps.DepartamentosConfig',
     'ebd.apps.EbdConfig',

@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.forms import ModelForm
 
 
 class Pessoa(models.Model):
@@ -35,9 +36,9 @@ class Congregacao(models.Model):
     cidade = models.CharField(max_length=70)
     estado = models.CharField(max_length=30)
     # contact
-    telefone = models.CharField(max_length=20)
-    celular = models.CharField(max_length=20)
-    email = models.EmailField()
+    telefone = models.CharField(max_length=20, blank=True)
+    celular = models.CharField(max_length=20, blank=True)
+    email = models.EmailField(blank=True)
 
 
 class PessoaCongregacao(models.Model):
@@ -67,3 +68,9 @@ class PessoaFuncao(models.Model):
     Funcao = models.ForeignKey(Funcao, on_delete=models.CASCADE)
     dataInicio = models.DateField()
     dataFim = models.DateField()
+
+
+class PessoaForm(ModelForm):
+    class Meta:
+        model = Pessoa
+        fields = "__all__"
