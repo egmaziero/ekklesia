@@ -24,6 +24,9 @@ class Pessoa(models.Model):
     email = models.EmailField()
     dataCadastro = models.DateField()
 
+    def __str__(self):
+        return self.nome
+
 
 class Congregacao(models.Model):
     nome = models.CharField(max_length=50)
@@ -39,6 +42,9 @@ class Congregacao(models.Model):
     celular = models.CharField(max_length=20)
     email = models.EmailField()
 
+    def __str__(self):
+        return self.nome
+
 
 class PessoaCongregacao(models.Model):
     Pessoa = models.ForeignKey(Pessoa, on_delete=models.CASCADE)
@@ -48,6 +54,9 @@ class PessoaCongregacao(models.Model):
 class Cargo(models.Model):
     nome = models.CharField(max_length=50)
     descricao = models.CharField(max_length=156)
+
+    def __str__(self):
+        return self.nome
 
 
 class PessoaCargo(models.Model):
@@ -60,6 +69,9 @@ class PessoaCargo(models.Model):
 class Funcao(models.Model):
     nome = models.CharField(max_length=50)
     descricao = models.CharField(max_length=156)
+
+    def __str__(self):
+        return self.nome
 
 
 class PessoaFuncao(models.Model):

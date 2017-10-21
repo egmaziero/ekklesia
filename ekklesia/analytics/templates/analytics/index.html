@@ -1,0 +1,29 @@
+{% load bootstrap3 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Ekklesia</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Inicial</a></li>
+      <li><a href="#">Membros</a></li>
+      <li><a href="#">Congregações</a></li>
+      <li><a href="#">Cargos e Funções</a></li>
+      <li><a href="#">EBD</a></li>
+      <li><a href="#">Departamentos</a></li>
+      <li><a href="#">Eventos</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Usuário</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logar</a></li>
+    </ul>
+  </div>
+</nav>

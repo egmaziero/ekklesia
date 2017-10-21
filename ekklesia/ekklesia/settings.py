@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'analytics.apps.AnalyticsConfig',
     'membros.apps.MembrosConfig',
     'departamentos.apps.DepartamentosConfig',
     'ebd.apps.EbdConfig',
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [

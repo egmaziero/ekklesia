@@ -1,6 +1,13 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
+from django.http import HttpResponse
+from django.template import loader
 
-from django.shortcuts import render
+from .models import Pessoa
 
-# Create your views here.
+
+def index(request):
+    pessoas_list = Pessoa.objects.order_by('dataCadastro')[:20]
+    template = loader.get_template('membros/index.html')
+    context = {
+        'pessoas_list': pessoas_list,
+    }
+    return HttpResponse(template.render(context, request))
