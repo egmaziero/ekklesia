@@ -1,14 +1,15 @@
-{% extends 'base.html' %}
+{% include "base.html" %}
+<div>
+    {% block content %}
+    <h1>Nova Pessoa</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        <table class="table table-striped">
+            {{ form.as_table }}
+        </table>
+        <button type="submit" class="save btn btn-default">Salvar</button>
+    </form>
+    {% endblock %}
+</div>
 
-
-        <div>
-        {% block content %}
-            <h1>Nova Pessoa</h1>
-            <form method="POST" class="post-form">{% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit" class="save btn btn-default">Salvar</button>
-            </form>
-        {% endblock %}
-        </div>
-    </body>
+</body>
 </html>

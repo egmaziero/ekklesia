@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 
 from .models import Pessoa
-from .forms import PessoaForm
+from .forms import PessoaForm, CongregacaoForm
 
 
 def index(request):
@@ -18,3 +18,7 @@ def index(request):
 def cadastro_pessoa(request):
     form = PessoaForm()
     return render(request, 'membros/cadastro_pessoa.html', {'form': form})
+
+def cadastro_congregacao(request):
+    form = CongregacaoForm()
+    return render(request, 'membros/cadastro_congregacao.html', {'form': form})
