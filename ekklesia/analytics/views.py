@@ -11,3 +11,9 @@ def index(request):
         'pessoas_list': pessoas_list,
     }
     return HttpResponse(template.render(context, request))
+
+
+def form_saved(request):
+    context = {}
+    template = loader.get_template('analytics/form_saved.html')
+    return HttpResponse(template.render(context, request))
