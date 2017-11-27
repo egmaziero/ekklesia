@@ -13,6 +13,18 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
 
+def results(request):
+    q = request.POST['query']
+    results_ = Pessoa.objects.all()
+    context = {'results': results_, 'query': q}
+    template = loader.get_template('analytics/results.html')
+    return HttpResponse(template.render(context, request))
+    # except KeyError:
+    #     context = {}
+    #     template = loader.get_template('analytics/error.html')
+    #     return HttpResponse(template.render(context, request))
+
+
 def form_saved(request):
     context = {}
     template = loader.get_template('analytics/form_saved.html')

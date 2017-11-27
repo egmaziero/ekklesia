@@ -1,11 +1,14 @@
-<div class="well" width="100%">
-
-    <form class="navbar-form navbar-left" , method="POST">{% csrf_token %}
+<div class="well">
+    <form class="navbar-form navbar-left" , method="POST" action="results">{% csrf_token %}
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
-
+            <input type="text" class="form-control" placeholder="Search" name="query">
+            <select name="domain" class="form-control btn-info">
+                <option value="membros">Membros</option>
+                <option value="congregacao">Congregações</option>
+                <option value="salaEBD">Sala da EBD</option>
+            </select>
         </div>
-        <button type="button" class="btn btn-info">
+        <button type="submit" class="btn btn-info">
             <span class="glyphicon glyphicon-search"></span> Buscar
         </button>
     </form>
